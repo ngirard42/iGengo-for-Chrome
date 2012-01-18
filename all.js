@@ -2007,6 +2007,12 @@ var MyGengoAPI;
     }
     console.log('url:', url);
 
+	$.ajaxSetup({
+	  beforeSend: function(request) {
+	    request.setRequestHeader("User-Agent","myGengo Chrome plugin; Version 1.0; http://mygengo.com/;");
+	  }
+	});
+
     $.ajax({
       async:    options.async,
       url:      url,
